@@ -1,7 +1,7 @@
 ###############################################################
 # Designed and Maintained by Mayank Nauni and Abhay Kranwal   # 
 #                                                             #
-#     APIC Health and Report to Spark                         # 
+#     APIC Health and Report to Cisco Spark                   # 
 #                                                             #
 #     All rights reserved.                                    # 
 #     Revision history:                                       #  
@@ -15,11 +15,11 @@
   tasks:
     - name: Show APIC Controller Health Status 
       raw: "bash"
-      raw: "show controller"
+      raw: "show controller"    # Any Command that you wish to execute 
       register: controller
     - debug: var=controller.stdout
     
-    - name: Register dummy host with variable
+    - name: Register dummy host with variable  # Creating dummy host to pass variable between plays
       add_host:
         name: "DUMMY_HOST"
         controller_new: "{{controller.stdout}}"
@@ -28,7 +28,7 @@
   connection: local
   gather_facts: False
   tasks:
-    - name: Sending message to room 
+    - name: Sending message to room # Sending the Command output to the room, you can the RoomID and Personal Token from WebEx Developer Portal
       cisco_spark:
         recipient_type: roomId
         recipient_id: {{roomID}}
