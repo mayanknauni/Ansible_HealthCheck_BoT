@@ -1,0 +1,37 @@
+###############################################################
+# Designed and Maintained by Mayank Nauni and Abhay Kranwal   # 
+#                                                             #
+#     APIC Health and Report to Spark                         # 
+#                                                             #
+#     All rights reserved.                                    # 
+#     Revision history:                                       #  
+#     16 Feb 2020 |  1.0 - initial release                    #   
+###############################################################     
+
+---
+- hosts: apic
+  connection: paramiko
+  gather_facts: False
+  tasks:
+    - name: Show APIC Controller Health Status 
+      raw: "bash"
+      raw: "show controller"
+      register: controller
+    - debug: var=controller.stdout
+    
+    - name: Register dummy host with variable
+      add_host:
+        name: "DUMMY_HOST"
+        controller_new: "{{controller.stdout}}"
+    
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+    - name: Sending message to room 
+      cisco_spark:
+        recipient_type: roomId
+        recipient_id: {{roomID}}
+        message_type: text
+        personal_token: {{token}}
+        message: "{{ hostvars['DUMMY_HOST']['controller_new'] }}"
