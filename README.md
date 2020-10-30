@@ -15,3 +15,5 @@ I am also training the chatbot to answer Level 1 Network Queries, using Dialogfl
 I am using Paramiko to connect to the devices and Cisco_Spark Module of Ansible to send the outputs to a Cisco WebEx Chat Room.
 
 In future use cases, I would ask ChatBot for ad-hoc reports and it will trigger relevant jobs at the backend and deliver the results to the room. 
+
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/mayanknauni/Ansible_HealthCheck_BoT)
