@@ -24,8 +24,8 @@ To use this code, you will need:
 2.	Modify the host name to point to your device i.e. router / switch / apic etc 
 3.	Modify the below line of code to execute the command as per your device: -
 
- raw: "show controller" # Any Command that you wish to execute 
-* Example commands are 
+ raw: "show controller" # Any Command that you wish to execute \
+Example commands are 
 * “show process cpu history” * 
 * “show logg | i keyword” *
 
@@ -37,11 +37,11 @@ To use this code, you will need:
 connection: local
 gather_facts: False
 tasks:
-- name: Sending message to room # Sending the Command output to the room, you can the RoomID and Personal Token from WebEx Developer Portal
-cisco_spark:
-recipient_type: roomId
-recipient_id: {{roomID}} #Room ID of the room you wish to send the message to
-message_type: text
+\- name: Sending message to room # Sending the Command output to the room, you can the RoomID and Personal Token from WebEx Developer Portal \
+cisco_spark: \
+recipient_type: roomId \
+recipient_id: {{roomID}} #Room ID of the room you wish to send the message to \
+message_type: text \
 personal_token: {{token}} #Token from the bot you created and was generated during the process.
 
 8.	The scripts can be executed as standalone from ansible by executing ansible-playbook ACI_Controller_Health.yml -v 
