@@ -24,10 +24,10 @@ To use this code, you will need:
 2.	Modify the host name to point to your device i.e. router / switch / apic etc 
 3.	Modify the below line of code to execute the command as per your device: -
 
-*raw: "show controller" # Any Command that you wish to execute
-*Example commands are 
-*“show process cpu history” 
-*“show logg | i keyword”
+* raw: "show controller" # Any Command that you wish to execute *
+* Example commands are *
+* “show process cpu history” * 
+* “show logg | i keyword” *
 
 4.	Login to  https://developer.webex.com/
 5.	Create a Bot 
