@@ -1,3 +1,5 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/mayanknauni/Ansible_HealthCheck_BoT)
+
 # Ansible: Cisco APIC Health Check with Cisco WebEx BoT Integration
 
 Raw Command Output from Ansible Delivered to Cisco WebEx Teams Rooms
@@ -51,5 +53,3 @@ personal_token: {{token}} #Token from the bot you created and was generated duri
  
  ![alt text](https://github.com/mayanknauni/Ansible_HealthCheck_BoT/blob/master/ChatBot2.0.jpg?raw=true)
 
-
-[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/mayanknauni/Ansible_HealthCheck_BoT)
